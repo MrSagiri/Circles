@@ -1,0 +1,25 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logout Success</title>
+    <!-- Include SweetAlert2 CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.7/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.7/dist/sweetalert2.all.min.js"></script>
+    <link rel="icon" type="image/svg+xml" href="{% static 'image/Circles.svg' %}">
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Logout Successful!',
+                html: 'Thank You For Using Our Website!'
+            }).then(function() {
+                window.location.href = "{% url 'LoginPage' %}";  // Redirect to dashboard or home page
+            });
+        });
+    </script>
+</body>
+</html>

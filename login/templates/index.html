@@ -1,0 +1,88 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Circles - Log In or Sign Up</title>
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/svg+xml" href="{% static 'image/Circles.svg' %}">
+        
+        <style>
+
+            .form-control{
+                width: 350px;
+                height: 40px;
+                padding:5px;  
+                border-radius: 9999px;
+                padding-top: 0.5rem; 
+                padding-bottom: 0.5rem;
+                padding-left: 1rem; 
+                padding-right: 1rem;
+                border: 1px solid black;             
+            }
+        </style>
+    
+    </head>
+    <body>
+        
+            <div class = "flex justify-center">
+                <div class = "inline-flex w-3/4 bg-white m-1/8 mt-14 rounded-xl filter drop-shadow-2xl">  
+                    <div class = "flex justify-center w-3/4">
+                        <div class = "p-10">
+                            <h1 class = "flex justify-center font-semibold text-indigo-800 text-9xl font-poppins">Circles</h1>
+                            <h5 class = "flex justify-center mt-5 mb-10 text-lg font-semibold font-opensans">Update. Connect. Share.</h5>    
+                            <div class = "w-3/4 mx-auto">
+                                <img src  = "static/image/pipol.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "w-1/2 bg-gradient-to-r from-indigo-800 to-purple-900 rounded-r-xl">
+                        <div class = "w-auto p-10 mt-16 mx-14">
+                            <form action=" " method="post">
+                                {% csrf_token %}
+                                <div class = 'mb-4'>
+                                    <div class = "inline-flex">
+                                        <div class = "w-10 h-10 mr-1 ">
+                                            <p class="text-white">  <i class="fa-solid fa-user"></i></p>
+                                        </div>
+                                        <h2 class = "mb-2 text-white">Username: </h2>
+                                    </div>
+                                    <!-- <input type = "text" class = 'px-4 py-2 text-black rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-950 focus:border-transparent'> -->
+                                    <h1>{{form.username}}</h1>
+                                </div>
+                    
+                                <div class = 'mb-8'>
+                                    <div class = "inline-flex">
+                                        <div class = "w-10 h-10 mr-1 text-white">
+                                            <i class="fa-solid fa-lock"></i>
+                                        </div>
+                                        
+                                        <h2 class = "mb-2 text-white">Password: </h2>
+                                    </div>
+                                    <!-- <input type = "password" class = 'px-4 py-2 text-black rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-950 focus:border-transparent'> -->
+                                    <h1>{{form.password}}</h1>
+                                </div>
+                                <div>
+                                    <button class = "px-20 py-2 mb-4 font-semibold text-indigo-900 bg-white filter drop-shadow-lg bg-opacity-70 hover:bg-black hover:text-white"><i class="fa-solid fa-right-to-bracket"></i> LOG-IN</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class = 'px-10 mx-auto mt-2'>
+                            <h4 class = "flex justify-center text-white font-opensans">Don't have an account yet?</h4>
+                            <div class = 'flex justify-center mt-2'>
+                                <button onclick="window.location.href = '{% url 'register' %}';" class = 'py-2 mb-4 font-semibold text-indigo-900 bg-white filter drop-shadow-lg px-11 bg-opacity-70 hover:bg-black hover:text-white'>CREATE ACCOUNT</button>
+                            </div>
+                        </div>              
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

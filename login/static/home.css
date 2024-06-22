@@ -1,0 +1,38 @@
+body{
+    background-color: slategrey;
+}
+
+.newsfeed{
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    margin-top: 4.375rem;
+    height: 100%;
+}
+
+.friends{
+    background-color: white;
+    width: 30%;
+    height: 100%;
+    margin-right: 20px;
+    border-radius: 0.625rem;
+    
+}
+
+.feed{
+    background-color: white;
+    width: 70%;
+    border-radius: 0.625rem;
+}
+
+.mind{
+    margin-bottom: 0.625rem;
+    border-radius: 0.625rem;
+    padding: 0.625rem;
+}
+
+.post{
+    margin-bottom: 0.625rem;
+    border-radius: 0.625rem;
+    padding: 0.625rem;
+}
